@@ -3,10 +3,12 @@ package by.x1ss.MeetUpDAO;
 import by.x1ss.model.MeetUp;
 import by.x1ss.utils.HibernateSessionFactoryUtil;
 import org.hibernate.Session;
+import org.springframework.stereotype.Repository;
 
 import java.util.Date;
 import java.util.List;
 
+@Repository
 public class MeetUpDAOIml implements MeetUpDAO{
     @Override
     @SuppressWarnings("unchecked")
