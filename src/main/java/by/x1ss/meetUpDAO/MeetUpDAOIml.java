@@ -1,4 +1,4 @@
-package by.x1ss.MeetUpDAO;
+package by.x1ss.meetUpDAO;
 
 import by.x1ss.model.MeetUp;
 import by.x1ss.utils.HibernateSessionFactoryUtil;
