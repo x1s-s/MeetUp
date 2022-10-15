@@ -9,7 +9,7 @@ import java.util.Date;
 import java.util.List;
 
 @Repository
-public class MeetUpDAOIml implements MeetUpDAO{
+public class MeetUpDAOIml implements MeetUpDAO {
     @Override
     @SuppressWarnings("unchecked")
     public List<MeetUp> getAll() {

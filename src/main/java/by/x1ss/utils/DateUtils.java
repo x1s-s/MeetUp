@@ -9,7 +9,7 @@ public class DateUtils {
     public static Date stringToDate(String date) {
         try {
             return new SimpleDateFormat("dd/MM/yyyy HH:mm:ss", Locale.ENGLISH).parse(date);
-        } catch (ParseException e){
+        } catch (ParseException e) {
             return null;
         }
     }
