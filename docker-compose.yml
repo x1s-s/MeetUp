@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  postgres:
+    image: 'postgres:10'
+    container_name: 'postgres'
+    environment:
+      - 'POSTGRES_USER=postgres'
+      - 'POSTGRES_PASSWORD=6321'
+      - 'POSTGRES_DB=MeetUp'
+  app:
+    build: ./
+    container_name: 'MeetUpAPI'
+    ports:
+      - 8080:8080
+    links:
+      - 'postgres:localhost'
