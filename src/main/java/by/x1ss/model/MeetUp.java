@@ -1,9 +1,7 @@
 package by.x1ss.model;
 
 import by.x1ss.utils.DateUtils;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -12,7 +10,9 @@ import java.util.Date;
 @NoArgsConstructor
 @Getter
 @Setter
+@ToString
 @Table(name = "meet_up")
+@EqualsAndHashCode
 public class MeetUp {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
