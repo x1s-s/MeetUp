@@ -1,6 +1,6 @@
-package by.x1ss.Model;
+package by.x1ss.model;
 
-import by.x1ss.Utils.DateUtils;
+import by.x1ss.utils.DateUtils;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;

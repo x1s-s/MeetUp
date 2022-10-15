@@ -1,4 +1,4 @@
-package by.x1ss.Utils;
+package by.x1ss.utils;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
