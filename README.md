@@ -141,7 +141,7 @@ Request URL:
 Request json body:
 ```
 {
-  "theme":"ur_theme",
+ 	"theme":"ur_theme",
 	"description":"ur_description",
 	"organizer":"ur_organizer",
 	"date":"ur_date",
@@ -170,8 +170,8 @@ Request URL:
 Request json body:
 ```
 {
-  "id":update_id
-  "theme":"new_theme",
+  	"id":update_id
+  	"theme":"new_theme",
 	"description":"new_description",
 	"organizer":"new_organizer",
 	"date":"new_date",
@@ -181,7 +181,7 @@ Request json body:
 Example request json body:
 ```
 {
-  "id":37,
+  	"id":37,
 	"theme":"dailyScrum",
 	"description":"Team building",
 	"organizer":"Alexey",
