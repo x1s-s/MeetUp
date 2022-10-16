@@ -26,7 +26,7 @@ In files:
 ## Docker-compose start tutorial:
   - Chagnge database url connection to ```jdbc:postgresql://postgres:5432/MeetUp```
   - Rebuild jar file
-  - Start docker-compose.yaml in Intellij IDEA or in cmd 
+  - Build and start docker-compose.yaml in Intellij IDEA or in cmd 
 
 ## Examples
 ### 1. <a name="GetAll">Get all meet up's</a>
