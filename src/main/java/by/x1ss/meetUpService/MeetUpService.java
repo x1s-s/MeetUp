@@ -1,22 +1,23 @@
 package by.x1ss.meetUpService;
 
+import by.x1ss.dto.MeetUpDTO;
 import by.x1ss.model.MeetUp;
 
 import java.util.Date;
 import java.util.List;
 
 public interface MeetUpService {
-    List<MeetUp> getAll();
+    List<MeetUpDTO> getAll();
 
-    MeetUp getById(long id);
+    MeetUpDTO getById(long id);
 
-    List<MeetUp> getAllWithFilter(String theme, String description, String location, Date date);
+    List<MeetUpDTO> getAllWithFilter(MeetUpDTO meetUpDTO);
 
-    List<MeetUp> getAllSorted(String sortOrder);
+    List<MeetUpDTO> getAllSorted(String sortOrder);
 
-    Long create(MeetUp meetUp);
+    Long create(MeetUpDTO meetUpDTO);
 
-    void update(MeetUp meetUp);
+    void update(MeetUpDTO meetUpDTO, long id);
 
-    void delete(MeetUp meetUp);
+    void delete(long id);
 }

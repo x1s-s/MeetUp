@@ -1,12 +1,12 @@
 package by.x1ss.meetUpService;
 
+import by.x1ss.dto.MeetUpDTO;
 import by.x1ss.meetUpDAO.MeetUpDAO;
-import by.x1ss.model.MeetUp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Date;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class MeetUpServiceImp implements MeetUpService {
@@ -14,37 +14,37 @@ public class MeetUpServiceImp implements MeetUpService {
     private MeetUpDAO meetUpDAO;
 
     @Override
-    public List<MeetUp> getAll() {
-        return meetUpDAO.getAll();
+    public List<MeetUpDTO> getAll() {
+        return meetUpDAO.getAll().stream().map(MeetUpDTO::fromMeetUp).collect(Collectors.toList());
     }
 
     @Override
-    public MeetUp getById(long id) {
-        return meetUpDAO.getById(id);
+    public MeetUpDTO getById(long id) {
+        return MeetUpDTO.fromMeetUp(meetUpDAO.getById(id));
     }
 
     @Override
-    public List<MeetUp> getAllWithFilter(String theme, String description, String location, Date date) {
-        return meetUpDAO.getAllWithFilter(theme, description, location, date);
+    public List<MeetUpDTO> getAllWithFilter(MeetUpDTO meetUpDTO) {
+        return meetUpDAO.getAllWithFilter(meetUpDTO).stream().map(MeetUpDTO::fromMeetUp).collect(Collectors.toList());
     }
 
     @Override
-    public List<MeetUp> getAllSorted(String sortOrder) {
-        return meetUpDAO.getAllSorted(sortOrder);
+    public List<MeetUpDTO> getAllSorted(String sortOrder) {
+        return meetUpDAO.getAllSorted(sortOrder).stream().map(MeetUpDTO::fromMeetUp).collect(Collectors.toList());
     }
 
     @Override
-    public Long create(MeetUp meetUp) {
-        return meetUpDAO.create(meetUp);
+    public Long create(MeetUpDTO meetUpDTO) {
+        return meetUpDAO.create(meetUpDTO);
     }
 
     @Override
-    public void update(MeetUp meetUp) {
-        meetUpDAO.update(meetUp);
+    public void update(MeetUpDTO meetUpDTO, long id) {
+        meetUpDAO.update(meetUpDTO, id);
     }
 
     @Override
-    public void delete(MeetUp meetUp) {
-        meetUpDAO.delete(meetUp);
+    public void delete(long id) {
+        meetUpDAO.delete(id);
     }
 }
