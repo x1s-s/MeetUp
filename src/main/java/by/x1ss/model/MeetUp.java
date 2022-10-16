@@ -30,19 +30,19 @@ public class MeetUp {
     @Column(name = "date")
     private Date date;
 
-    @Column(name = "place")
-    private String place;
+    @Column(name = "location")
+    private String location;
 
-    public MeetUp(String theme, String description, String organizer, Date date, String place) {
+    public MeetUp(String theme, String description, String organizer, Date date, String location) {
         this.theme = theme;
         this.description = description;
         this.organizer = organizer;
         this.date = date;
-        this.place = place;
+        this.location = location;
     }
 
-    public MeetUp(String theme, String description, String organizer, String date, String place) {
-        this(theme, description, organizer, DateUtils.stringToDate(date), place);
+    public MeetUp(String theme, String description, String organizer, String date, String location) {
+        this(theme, description, organizer, DateUtils.stringToDate(date), location);
     }
 
     public void setDate(String date){

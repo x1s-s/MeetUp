@@ -4,7 +4,7 @@ CREATE TABLE meet_up
     date        timestamp,
     description VARCHAR(255),
     organizer   VARCHAR(255),
-    place       VARCHAR(255),
+    location    VARCHAR(255),
     theme       VARCHAR(255),
     CONSTRAINT meet_up_pkey PRIMARY KEY (id)
 );
