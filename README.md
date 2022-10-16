@@ -195,7 +195,7 @@ Example request json body:
 }
 ```
 ### 7. <a name="Delete">Delete</a>
-Reqyest url
+Request url
 ```
 [DELETE] localhost:8080/meetUp/{id}
 ```
