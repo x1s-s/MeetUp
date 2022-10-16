@@ -39,7 +39,6 @@ Response body:
 ```
 [
 	{
-		"id": 36,
 		"theme": "dailyScrum",
 		"description": "Framework's",
 		"organizer": "PM",
@@ -47,7 +46,6 @@ Response body:
 		"place": "googlemeets"
 	},
 	{
-		"id": 37,
 		"theme": "dailyScrum",
 		"description": "Team building",
 		"organizer": "PM",
@@ -68,7 +66,6 @@ Example request URL:
 Response body:
 ```
 {
-	"id": 36,
 	"theme": "dailyScrum",
 	"description": "Framework's",
 	"organizer": "PM",
@@ -83,7 +80,7 @@ Request URL:
 ```
 Request json body:
 ```
-[id] [, theme] [, description] [, organizer] [, date] [, place]
+[theme] [, description] [, organizer] [, date] [, place]
 ```
 Example request json body:
 ```
@@ -93,7 +90,6 @@ Response body:
 ```
 [
 	{
-		"id": 36,
 		"theme": "dailyScrum",
 		"description": "Framework's",
 		"organizer": "PM",
@@ -101,7 +97,6 @@ Response body:
 		"place": "googlemeets"
 	},
 	{
-		"id": 37,
 		"theme": "dailyScrum",
 		"description": "Team building",
 		"organizer": "PM",
@@ -113,18 +108,29 @@ Response body:
 ### 4. <a name="GetFiltered">Get filtered meet up's</a>
 Request URL: 
 ```
-[GET] localhost:8080/meetUp/filter?[theme=ur_theme][&description=ur_description][&organizer=ur_organizer][&date=ur_date][&place=ur_place]
+[GET] localhost:8080/meetUp/filter
 ```
-Examole request URL: 
+Request json body:
 ```
-[GET] localhost:8080/meetUp/filter?place=googlemeets&description=Framework's
+{
+	["theme": "fileter_theme",]
+	["description": "fileter_description",]
+	["organizer": "fileter_organizer",]
+	["date": "fileter_date",]
+	["place": "fileter_place"]
+}
 ```
-
+Example request json body:
+```
+{
+	"description":"Framework",
+	"place":"googlemeets"
+}
+```
 Response body:
 ```
 [
 	{
-		"id": 36,
 		"theme": "dailyScrum",
 		"description": "Framework's",
 		"organizer": "PM",
@@ -165,12 +171,11 @@ Response body(id):
 ### 6. <a name="Update">Update</a>
 Request URL: 
 ```
-[PATCH] localhost:8080/meetUp/
+[PATCH] localhost:8080/meetUp/{id}
 ```
 Request json body:
 ```
 {
-  	"id":update_id
   	"theme":"new_theme",
 	"description":"new_description",
 	"organizer":"new_organizer",
@@ -178,31 +183,24 @@ Request json body:
 	"place":"new_place"
 }
 ```
+Example request URL: 
+```
+[PATCH] localhost:8080/meetUp/37
+```
 Example request json body:
 ```
 {
-  	"id":37,
-	"theme":"dailyScrum",
 	"description":"Team building",
 	"organizer":"Alexey",
-	"date":"10/12/2022 16:00:00",
-	"place":"googlemeets"
 }
 ```
 ### 7. <a name="Delete">Delete</a>
-Request URL: 
+Reqyest url
 ```
-[DELETE] localhost:8080/meetUp/
+[DELETE] localhost:8080/meetUp/{id}
 ```
-Request json body:
+Example request URL: 
 ```
-{
-  "id":delete_id
-}
+[DELETE] localhost:8080/meetUp/37
 ```
-Example request json body:
-```
-{
-  "id":37
-}
-```
+
