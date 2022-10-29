@@ -28,16 +28,12 @@ public class MeetUpController {
     }
 
     @GetMapping("/sorted")
-    public ResponseEntity<List<MeetUpDTO>> getAllSorted(@RequestBody(required = false) String sortOrder) {
-        if (sortOrder != null) {
-            return ResponseEntity.ok(meetUpService.getAllSorted(sortOrder));
-        } else {
-            return ResponseEntity.ok(meetUpService.getAll());
-        }
+    public ResponseEntity<List<MeetUpDTO>> getAllSorted(@RequestParam(name = "sortOrder") String sortOrder) {
+        return ResponseEntity.ok(meetUpService.getAllSorted(sortOrder));
     }
 
     @GetMapping("/filter")
-    public ResponseEntity<List<MeetUpDTO>> getAllWithFilter(@RequestBody MeetUpDTO meetUpDTO) throws ParseException {
+    public ResponseEntity<List<MeetUpDTO>> getAllWithFilter(@RequestParam(name = "MeetUpDTO") MeetUpDTO meetUpDTO) {
         return ResponseEntity.ok(meetUpService.getAllWithFilter(meetUpDTO));
     }
 
